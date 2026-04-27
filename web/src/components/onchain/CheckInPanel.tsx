@@ -60,7 +60,6 @@ export function CheckInPanel() {
         <p className="mt-3 text-xs text-amber-200">Wallet is not on Base. We will switch automatically before signing.</p>
       ) : null}
       <p className="mt-3 text-xs text-fuchsia-100/85">{status}</p>
-      <p className="mt-1 text-[10px] text-fuchsia-200/70">Contract: {contractAddress}</p>
     </section>
   );
 }
