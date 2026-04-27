@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# web (Next.js)
+web/node_modules/
+web/.next/
+web/out/
+web/build/
+web/.vercel/
+web/.env*
+!web/.env.example
+web/next-env.d.ts
+web/*.tsbuildinfo
+
+# contracts (Foundry)
+contracts/cache/
+contracts/out/
+contracts/broadcast/
+contracts/node_modules/
+contracts/lib/forge-std/.git/
