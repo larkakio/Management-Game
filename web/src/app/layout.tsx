@@ -23,7 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const baseAppId = process.env.NEXT_PUBLIC_BASE_APP_ID ?? "base-app-id-missing";
+  const baseAppId = process.env.NEXT_PUBLIC_BASE_APP_ID ?? "69ef05698502c283edbf962b";
 
   return (
     <html
