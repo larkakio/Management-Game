@@ -47,3 +47,14 @@ Mobile-first cyberpunk management game built as a standard Base App web app.
 - Deploy `web/` as Vercel root directory.
 - Add all `NEXT_PUBLIC_*` env vars to Vercel Project Settings.
 - After re-deploying contract, update `NEXT_PUBLIC_CHECK_IN_CONTRACT_ADDRESS`.
+
+## Base dashboard: “web resource must have metadata”
+
+If domain registration on `dashboard.base.org` fails with that message:
+
+- In the **App Domain** field use the **hostname only**, for example `management-game-blush.vercel.app`. Do **not** include `https://` or a trailing `/`.
+- Confirm the live HTML contains `<meta name="base:app_id" content="YOUR_APP_ID" />` via **View Page Source** on the production URL (not only the Elements tab after client hydration).
+- In Vercel → **Settings → Deployment Protection**, ensure **Vercel Authentication** is **off** for production. If it is on, automated checks may not see your real homepage meta tag.
+- Trigger a fresh production deploy, wait until it is **Ready**, then click **Register** again in the Base dashboard.
+
+Standard web app migration context: [Migrate to a Standard Web App](https://docs.base.org/apps/quickstart/migrate-to-standard-web-app).

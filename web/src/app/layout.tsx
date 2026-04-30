@@ -13,9 +13,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const defaultSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://management-game-blush.vercel.app";
+
+const baseAppId = process.env.NEXT_PUBLIC_BASE_APP_ID ?? "69ef05698502c283edbf962b";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(defaultSiteUrl.startsWith("http") ? defaultSiteUrl : `https://${defaultSiteUrl}`),
   title: "Neon Grid Command",
   description: "Swipe-driven cyberpunk management game on Base.",
+  other: {
+    "base:app_id": baseAppId,
+  },
 };
 
 export default function RootLayout({
@@ -23,8 +32,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const baseAppId = process.env.NEXT_PUBLIC_BASE_APP_ID ?? "69ef05698502c283edbf962b";
-
   return (
     <html
       lang="en"
